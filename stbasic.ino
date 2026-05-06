@@ -1,15 +1,17 @@
 #include <Servo.h>
 int ldr1Pin = A0;  // LDR 1 (Levi senzor)
 int ldr2Pin = A1;  // LDR 2 (Desni senzor)
+int panelPin = A2;
 int servoPin = 8;  // Servo motor pin
 Servo myservo;     // Pravi servo objekat
 int ldr1Value = 0;
+
 int ldr2Value = 0; 
 int servoPos = 90; // Pocetna pozicija (moze se menjati ali utice na if funkciju
 void setup() {
   myservo.attach(servoPin); // Prikljuci servo pinu 8
   pinMode(ldr1Pin, INPUT);  // LDR1 ulaz
-  pinMode(ldr2Pin, INPUT);  // LDR2 izlaz 
+  pinMode(ldr2Pin, INPUT);  // LDR2 ulaz 
   myservo.write(servoPos);  // Pocetna pozicija serva
   Serial.begin(9600);       // Serijska kom, upali serial monitor 
 }
@@ -21,10 +23,17 @@ void loop() {
 
   int diff = ldr1Value - ldr2Value;
 
+  int raw = analogRead(panelPin); 
+  float voltage = raw * (5.0 / 1023.0); // pretva`ra se u napon
+  float panelVoltage = voltage * 2; // mnozi se napon jer se deli sa dva
+  
   Serial.print("LDR1: ");
   Serial.print(ldr1Value);
   Serial.print(" LDR2: ");
-  Serial.println(ldr2Value);
+  Serial.print(ldr2Value);
+  Serial.print(" V: ");
+  Serial.println(panelVoltage); // println zbog novog reda
+  delay(100); 
 
   if (abs(diff) > threshold) {
     if (diff < 0) {
@@ -42,5 +51,5 @@ void loop() {
     }
   }
 
-  delay(50);
+  delay(100);
 }
