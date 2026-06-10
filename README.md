@@ -31,7 +31,20 @@ This project had some inital tasks and functions and some were added while worki
 ### Advanced functions:
 
 - Start calibration of the device to avoid flip of the solar panel
-- Power save, move either on some event or every 1min 
+- Power save, move either on some event or every 1 minute
+- Compensate elevation of the ground using accelerometer
+- PI regulation of the position
+- Measurement of the voltage of the solar panel
+
+### Added tasks and functions:
+
+- Add states to the project
+- Make a hysteresis with tolerances for entering and exiting states 
+- Make a switch from a 180 to 360 degree motor
+- Add a Hall sensor to serve as a limit to the rotation of the
+- Add a "scan" state to find the optimal position after sleep
+- Add "backoff" function if the system is trying to go past the limit
+- Move from magnet when going to sleep 
 
   
 ## LIST OF CONTENT
@@ -95,5 +108,7 @@ Here are the instructions to setup
 - 3D print of the components carrying the panel and LDRs; Now just a demonstration model 
 - Missing a slip ring for better and safer movement of cables
 - Comments in codes are not in English
-- Tracking doesnt have a limit in code number 4 (360motor)
-- Not the 
+- Non consistent names of variables in different codes
+- Tracking doesnt have a time limit in code number 4 (360motor)
+- Code should be more readable, updates in "TRACKING" case and "moveServo" function needed
+- 
