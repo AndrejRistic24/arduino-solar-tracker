@@ -115,3 +115,4 @@ Here are the instructions to setup
 - State cases not in order in 360motor.ino
 - Code should be more readable, updates in "TRACKING" case and "moveServo" function needed
 - Branches and codes not named as described in README.md
+- Missing content in "VISUAL HELPER", "DIAGRAM", "VIDEO" and "INSTRUCIONS & EXPLANATIONS" segments of README.md
