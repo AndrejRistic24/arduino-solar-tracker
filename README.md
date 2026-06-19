@@ -48,7 +48,7 @@ This project had some inital tasks and functions and some were added while worki
 
   
 ## LIST OF CONTENT
-This project has **4 codes available** and here is a short explanation for each one, while a more detailed explanation will be available latter in the text.
+This project has **4 branches** with **4 different codes** and here is a short explanation for each one, while a more detailed explanation will be available latter in the text.
 
 1. **stbasic.ino** - This is the simplest possible code for a solar tracker 
 2. **statemachine01.ino** - Introduces states like **tracking** and **sleeping**
@@ -102,6 +102,8 @@ Here are the instructions to setup
 
 ## UPDATES
 
+- Added 360motor branch and 360motor.ino code that was missing (19.06.2026.)
+
 ## KNOWN ISSUES & FUTURE FIXES/CHANGES/UPGRADES
 
 - Advanced task hasnt been done
@@ -110,5 +112,6 @@ Here are the instructions to setup
 - Comments in codes are not in English
 - Non consistent names of variables in different codes
 - Tracking doesnt have a time limit in code number 4 (360motor)
+- State cases not in order in 360motor.ino
 - Code should be more readable, updates in "TRACKING" case and "moveServo" function needed
-- 
+- Branches and codes not named as described in README.md
